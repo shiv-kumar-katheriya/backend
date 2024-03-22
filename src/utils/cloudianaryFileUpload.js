@@ -17,10 +17,9 @@ const uploadOnCloudinary =  async (localFilePath)=>{
                 resource_type : "auto"
             }
         )
-        console.log("result after file upload is :: ",result);
+        fs.unlinkSync(localFilePath);
         return result;
     } catch (error) {
-        console.log("error is ::: ",error);
         fs.unlinkSync(localFilePath)
         return null;
     }
